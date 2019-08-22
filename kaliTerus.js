@@ -1,15 +1,14 @@
 function kaliTerusRekursif(angka) {
     // you can only write your code here!
     var angkaStr = angka.toString()
-        // console.log(angkaStr)
-        // if(angkaStr.length == 1){
-        //     return angka
-        // }
-    if (angka.length == 1) {
-        return 1
+    if (angkaStr.length == 1) {
+        return angka
     }
-    return angkaStr * kaliTerusRekursif(angkaStr.slice(-1))
-
+    var kali = 1
+    for (var i = 0; i < angkaStr.length; i++) {
+        kali *= angkaStr[i]
+    }
+    return kaliTerusRekursif(kali)
 }
 
 
